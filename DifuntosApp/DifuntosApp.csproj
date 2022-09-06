@@ -87,6 +87,9 @@
     <Compile Include="SPGetDifuntos_Result.cs">
       <DependentUpon>DifuntosDBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="SPGetGeneral_Result.cs">
+      <DependentUpon>DifuntosDBContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="tblDifunto.cs">
       <DependentUpon>DifuntosDBContext.tt</DependentUpon>
     </Compile>

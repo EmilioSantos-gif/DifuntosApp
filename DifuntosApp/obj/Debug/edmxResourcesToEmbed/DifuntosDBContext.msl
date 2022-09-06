@@ -49,5 +49,16 @@
     <FunctionImportMapping FunctionImportName="SPInsertDifunto" FunctionName="DifuntosDBModel.Store.SPInsertDifunto" />
     <FunctionImportMapping FunctionImportName="SPInsertGeneral" FunctionName="DifuntosDBModel.Store.SPInsertGeneral" />
     <FunctionImportMapping FunctionImportName="SPUpdateGeneral" FunctionName="DifuntosDBModel.Store.SPUpdateGeneral" />
+    <FunctionImportMapping FunctionImportName="SPGetGeneral" FunctionName="DifuntosDBModel.Store.SPGetGeneral">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DifuntosDBModel.SPGetGeneral_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="FchUltActualizacion" ColumnName="FchUltActualizacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

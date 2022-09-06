@@ -13,20 +13,26 @@ namespace DifuntosApp
         static void Main(string[] args)
         { 
             
-            DifuntosDBEntities difuntosDBEntities = new DifuntosDBEntities();
-            DbContextTransaction dbCtxtTransaction = difuntosDBEntities.Database.BeginTransaction();
 
+            DifuntosDBEntities difuntosDBEntities = new DifuntosDBEntities();
+            
+            DbContextTransaction dbCtxtTransaction = difuntosDBEntities.Database.BeginTransaction();
+            
             List<SPGetDifuntos_Result> result2 = difuntosDBEntities.SPGetDifuntos().ToList();
 
-            result2.ForEach(d => Console.WriteLine($"{d.Nombres} {d.Apellidos}\t{d.Documento}\t{d.Sexo}\t{d.FechaNacimiento}\t{d.Tipo}"));
+            result2.ForEach(r => Console.WriteLine($"{r.Nombres} {r.Apellidos}\t{r.Documento}\t{r.Sexo}\t{r.FechaNacimiento}\t{r.Tipo}"));
 
-            tblDifunto difunto = getDatosDifunto();
+            //difuntosDBEntities.tblDifunto.Add(d);
+            //int cantidadDifuntosBefore = difuntosDBEntities.tblDifunto.Count();
+            tblDifunto d = getDatosDifunto();
+            int resultado = difuntosDBEntities.SPInsertDifunto(d.TipoDocumento, d.Documento, d.Nombres, d.Apellidos, d.FechaNacimiento, d.Sexo, d.FechaRegistro, d.Nota, d.Tipo, d.Estado);
 
-            difuntosDBEntities.tblDifunto.Add(difunto);
+           // Console.WriteLine($"Valor retornado por stored pocedure: {resultado}");
+           // Console.ReadLine();
 
-            //Console.WriteLine(difuntosDBEntities.SaveChanges());
+            //int cantidadDifuntosAfter = difuntosDBEntities.tblDifunto.Count();
 
-            if (difuntosDBEntities.SaveChanges() == 1)
+            if (resultado == 1)
             {
                 Console.WriteLine("\nDifunto registrado satisfactoriamente.");
 
@@ -51,8 +57,7 @@ namespace DifuntosApp
                 {
                     Console.WriteLine("\nRegistro general actualizado satisfactoriamente.");
                     dbCtxtTransaction.Commit();
-                }
-                else
+                } else
                 {
                     Console.WriteLine("\nEl registro general no se pudo crear o actualizar.");
                     dbCtxtTransaction.Rollback();
@@ -62,8 +67,9 @@ namespace DifuntosApp
             //List<tblDifunto> read = difuntosDBEntities.Database.SqlQuery<tblDifunto>("SPGetDifuntos").ToList();
             List<SPGetDifuntos_Result> result = difuntosDBEntities.SPGetDifuntos().ToList();
 
-            result.ForEach(d => Console.WriteLine($"{d.Nombres} {d.Apellidos}\t{d.Documento}\t{d.Sexo}\t{d.FechaNacimiento}\t{d.Tipo}"));
+            result.ForEach(r => Console.WriteLine($"{r.Nombres} {r.Apellidos}\t{r.Documento}\t{r.Sexo}\t{r.FechaNacimiento}\t{r.Tipo}"));
 
+            Console.ReadLine();
             return;
         }
 
@@ -136,24 +142,26 @@ namespace DifuntosApp
             return general;
         }
 
-        private static int TestInsetDifunto()
+        private static tblDifunto TestInsetDifunto()
         {
-            tblDifunto difunto = new tblDifunto
+            //tblDifunto difunto = new tblDifunto
+            return new tblDifunto
             {
                 TipoDocumento = "Cedula",
                 Documento = "40219326887",
-                Nombres = "Emilio",
-                Apellidos = "Santos",
+                Nombres = "Fernando",
+                Apellidos = "Rosa",
                 FechaNacimiento = DateTime.Now,
+                FechaRegistro = DateTime.Now,
                 Sexo = "M",
                 Nota = "Se encuentra en el cielo",
                 Tipo = "Decapitación",
                 Estado = "Activo"
             };
-            DifuntosDBEntities difuntosDBEntities = new DifuntosDBEntities();
+            //DifuntosDBEntities difuntosDBEntities = new DifuntosDBEntities();
 
-            difuntosDBEntities.tblDifunto.Add(difunto);
-            return difuntosDBEntities.SaveChanges();
+            //difuntosDBEntities.tblDifunto.Add(difunto);
+            //return difuntosDBEntities.SaveChanges();
         }
     }
 }

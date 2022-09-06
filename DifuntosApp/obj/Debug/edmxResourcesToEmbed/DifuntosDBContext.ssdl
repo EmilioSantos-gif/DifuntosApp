@@ -27,6 +27,7 @@
     <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Function Name="SPGetDifuntos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SPGetGeneral" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SPInsertDifunto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="TipoDocumento" Type="varchar" Mode="In" />
     <Parameter Name="Documento" Type="varchar" Mode="In" />

@@ -43,6 +43,7 @@
       <Parameter Name="Cantidad" Mode="In" Type="Int32" />
       <Parameter Name="FchUltActualizacion" Mode="In" Type="DateTime" />
     </FunctionImport>
+    <FunctionImport Name="SPGetGeneral" ReturnType="Collection(DifuntosDBModel.SPGetGeneral_Result)" />
   </EntityContainer>
   <EntityType Name="tblGeneral">
     <Key>
@@ -65,6 +66,13 @@
     <Property Type="DateTime" Name="FechaRegistro" Nullable="false" Precision="23" />
     <Property Type="String" Name="Nota" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="Tipo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SPGetGeneral_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="Cantidad" Nullable="false" />
+    <Property Type="DateTime" Name="FchUltActualizacion" Nullable="false" Precision="23" />
     <Property Type="String" Name="Estado" Nullable="false" MaxLength="50" />
   </ComplexType>
 </Schema>

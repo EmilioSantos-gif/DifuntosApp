@@ -11,3 +11,17 @@ C:\Users\emili\source\repos\DifuntosApp\DifuntosApp\bin\Debug\EntityFramework.Sq
 C:\Users\emili\source\repos\DifuntosApp\DifuntosApp\obj\Debug\DifuntosApp.csproj.CopyComplete
 C:\Users\emili\source\repos\DifuntosApp\DifuntosApp\obj\Debug\DifuntosApp.exe
 C:\Users\emili\source\repos\DifuntosApp\DifuntosApp\obj\Debug\DifuntosApp.pdb
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\bin\Debug\DifuntosDB.mdf
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\bin\Debug\DifuntosDB_log.ldf
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\bin\Debug\DifuntosApp.exe.config
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\bin\Debug\DifuntosApp.exe
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\bin\Debug\DifuntosApp.pdb
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\bin\Debug\EntityFramework.dll
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\bin\Debug\EntityFramework.xml
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\obj\Debug\DifuntosApp.csproj.AssemblyReference.cache
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\obj\Debug\DifuntosApp.csproj.CoreCompileInputs.cache
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\obj\Debug\DifuntosApp.csproj.CopyComplete
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\obj\Debug\DifuntosApp.exe
+C:\Users\Emilio\Desktop\DifuntosApp\DifuntosApp\obj\Debug\DifuntosApp.pdb

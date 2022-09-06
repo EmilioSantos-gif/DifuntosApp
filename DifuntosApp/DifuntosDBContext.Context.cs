@@ -117,5 +117,10 @@ namespace DifuntosApp
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SPUpdateGeneral", idParameter, cantidadParameter, fchUltActualizacionParameter);
         }
+    
+        public virtual ObjectResult<SPGetGeneral_Result> SPGetGeneral()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SPGetGeneral_Result>("SPGetGeneral");
+        }
     }
 }
