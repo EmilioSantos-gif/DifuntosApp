@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DifuntosDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblDifunto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipoDocumento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Documento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sexo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="Nota" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DifuntosDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblDifunto" EntityType="Self.tblDifunto" />
+    <EntitySet Name="tblGeneral" EntityType="DifuntosDBModel.tblGeneral" />
+    <FunctionImport Name="SPGetDifuntos" ReturnType="Collection(DifuntosDBModel.SPGetDifuntos_Result)" />
+  </EntityContainer>
+  <EntityType Name="tblGeneral">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="FchUltActualizacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SPGetDifuntos_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Nombres" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Apellidos" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Sexo" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaRegistro" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Nota" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Tipo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="50" />
+  </ComplexType>
+</Schema>
