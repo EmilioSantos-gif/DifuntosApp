@@ -20,6 +20,29 @@
     <EntitySet Name="tblDifunto" EntityType="Self.tblDifunto" />
     <EntitySet Name="tblGeneral" EntityType="DifuntosDBModel.tblGeneral" />
     <FunctionImport Name="SPGetDifuntos" ReturnType="Collection(DifuntosDBModel.SPGetDifuntos_Result)" />
+    <FunctionImport Name="SPInsertDifunto">
+      <Parameter Name="TipoDocumento" Mode="In" Type="String" />
+      <Parameter Name="Documento" Mode="In" Type="String" />
+      <Parameter Name="Nombres" Mode="In" Type="String" />
+      <Parameter Name="Apellidos" Mode="In" Type="String" />
+      <Parameter Name="FechaNacimiento" Mode="In" Type="DateTime" />
+      <Parameter Name="Sexo" Mode="In" Type="String" />
+      <Parameter Name="FechaRegistro" Mode="In" Type="DateTime" />
+      <Parameter Name="Nota" Mode="In" Type="String" />
+      <Parameter Name="Tipo" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPInsertGeneral">
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="FchUltActualizacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPUpdateGeneral">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="FchUltActualizacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="tblGeneral">
     <Key>

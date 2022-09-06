@@ -27,6 +27,29 @@
     <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Function Name="SPGetDifuntos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SPInsertDifunto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoDocumento" Type="varchar" Mode="In" />
+    <Parameter Name="Documento" Type="varchar" Mode="In" />
+    <Parameter Name="Nombres" Type="varchar" Mode="In" />
+    <Parameter Name="Apellidos" Type="varchar" Mode="In" />
+    <Parameter Name="FechaNacimiento" Type="datetime" Mode="In" />
+    <Parameter Name="Sexo" Type="varchar" Mode="In" />
+    <Parameter Name="FechaRegistro" Type="datetime" Mode="In" />
+    <Parameter Name="Nota" Type="varchar" Mode="In" />
+    <Parameter Name="Tipo" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SPInsertGeneral" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Cantidad" Type="int" Mode="In" />
+    <Parameter Name="FchUltActualizacion" Type="datetime" Mode="In" />
+    <Parameter Name="Estado" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SPUpdateGeneral" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="Cantidad" Type="int" Mode="In" />
+    <Parameter Name="FchUltActualizacion" Type="datetime" Mode="In" />
+  </Function>
   <EntityContainer Name="DifuntosDBModelStoreContainer">
     <EntitySet Name="tblDifunto" EntityType="Self.tblDifunto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblGeneral" EntityType="Self.tblGeneral" Schema="dbo" store:Type="Tables" />

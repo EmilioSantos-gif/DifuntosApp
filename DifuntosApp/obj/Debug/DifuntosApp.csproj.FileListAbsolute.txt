@@ -1,4 +1,3 @@
-C:\Users\emili\source\repos\DifuntosApp\DifuntosApp\obj\Debug\DifuntosApp.csproj.AssemblyReference.cache
 C:\Users\emili\source\repos\DifuntosApp\DifuntosApp\obj\Debug\DifuntosApp.csproj.CoreCompileInputs.cache
 C:\Users\emili\source\repos\DifuntosApp\DifuntosApp\bin\Debug\DifuntosDB.mdf
 C:\Users\emili\source\repos\DifuntosApp\DifuntosApp\bin\Debug\DifuntosDB_log.ldf

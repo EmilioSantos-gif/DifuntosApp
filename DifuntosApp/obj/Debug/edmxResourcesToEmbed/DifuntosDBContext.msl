@@ -46,5 +46,8 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPInsertDifunto" FunctionName="DifuntosDBModel.Store.SPInsertDifunto" />
+    <FunctionImportMapping FunctionImportName="SPInsertGeneral" FunctionName="DifuntosDBModel.Store.SPInsertGeneral" />
+    <FunctionImportMapping FunctionImportName="SPUpdateGeneral" FunctionName="DifuntosDBModel.Store.SPUpdateGeneral" />
   </EntityContainerMapping>
 </Mapping>

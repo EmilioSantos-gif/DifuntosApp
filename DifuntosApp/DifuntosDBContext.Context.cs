@@ -34,5 +34,88 @@ namespace DifuntosApp
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SPGetDifuntos_Result>("SPGetDifuntos");
         }
+    
+        public virtual int SPInsertDifunto(string tipoDocumento, string documento, string nombres, string apellidos, Nullable<System.DateTime> fechaNacimiento, string sexo, Nullable<System.DateTime> fechaRegistro, string nota, string tipo, string estado)
+        {
+            var tipoDocumentoParameter = tipoDocumento != null ?
+                new ObjectParameter("TipoDocumento", tipoDocumento) :
+                new ObjectParameter("TipoDocumento", typeof(string));
+    
+            var documentoParameter = documento != null ?
+                new ObjectParameter("Documento", documento) :
+                new ObjectParameter("Documento", typeof(string));
+    
+            var nombresParameter = nombres != null ?
+                new ObjectParameter("Nombres", nombres) :
+                new ObjectParameter("Nombres", typeof(string));
+    
+            var apellidosParameter = apellidos != null ?
+                new ObjectParameter("Apellidos", apellidos) :
+                new ObjectParameter("Apellidos", typeof(string));
+    
+            var fechaNacimientoParameter = fechaNacimiento.HasValue ?
+                new ObjectParameter("FechaNacimiento", fechaNacimiento) :
+                new ObjectParameter("FechaNacimiento", typeof(System.DateTime));
+    
+            var sexoParameter = sexo != null ?
+                new ObjectParameter("Sexo", sexo) :
+                new ObjectParameter("Sexo", typeof(string));
+    
+            var fechaRegistroParameter = fechaRegistro.HasValue ?
+                new ObjectParameter("FechaRegistro", fechaRegistro) :
+                new ObjectParameter("FechaRegistro", typeof(System.DateTime));
+    
+            var notaParameter = nota != null ?
+                new ObjectParameter("Nota", nota) :
+                new ObjectParameter("Nota", typeof(string));
+    
+            var tipoParameter = tipo != null ?
+                new ObjectParameter("Tipo", tipo) :
+                new ObjectParameter("Tipo", typeof(string));
+    
+            var estadoParameter = estado != null ?
+                new ObjectParameter("Estado", estado) :
+                new ObjectParameter("Estado", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SPInsertDifunto", tipoDocumentoParameter, documentoParameter, nombresParameter, apellidosParameter, fechaNacimientoParameter, sexoParameter, fechaRegistroParameter, notaParameter, tipoParameter, estadoParameter);
+        }
+    
+        public virtual int SPInsertGeneral(string descripcion, Nullable<int> cantidad, Nullable<System.DateTime> fchUltActualizacion, string estado)
+        {
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("Descripcion", descripcion) :
+                new ObjectParameter("Descripcion", typeof(string));
+    
+            var cantidadParameter = cantidad.HasValue ?
+                new ObjectParameter("Cantidad", cantidad) :
+                new ObjectParameter("Cantidad", typeof(int));
+    
+            var fchUltActualizacionParameter = fchUltActualizacion.HasValue ?
+                new ObjectParameter("FchUltActualizacion", fchUltActualizacion) :
+                new ObjectParameter("FchUltActualizacion", typeof(System.DateTime));
+    
+            var estadoParameter = estado != null ?
+                new ObjectParameter("Estado", estado) :
+                new ObjectParameter("Estado", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SPInsertGeneral", descripcionParameter, cantidadParameter, fchUltActualizacionParameter, estadoParameter);
+        }
+    
+        public virtual int SPUpdateGeneral(Nullable<int> id, Nullable<int> cantidad, Nullable<System.DateTime> fchUltActualizacion)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var cantidadParameter = cantidad.HasValue ?
+                new ObjectParameter("Cantidad", cantidad) :
+                new ObjectParameter("Cantidad", typeof(int));
+    
+            var fchUltActualizacionParameter = fchUltActualizacion.HasValue ?
+                new ObjectParameter("FchUltActualizacion", fchUltActualizacion) :
+                new ObjectParameter("FchUltActualizacion", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SPUpdateGeneral", idParameter, cantidadParameter, fchUltActualizacionParameter);
+        }
     }
 }
